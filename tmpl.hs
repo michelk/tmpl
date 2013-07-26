@@ -7,15 +7,25 @@ import qualified Data.Text as T
 import qualified Data.Text.IO as TIO
 import qualified Data.Text.Lazy.Encoding as E
 import System.Directory (doesFileExist)
+import System.Exit (exitSuccess)
 
 import Data.Text.Template
 
 usage :: String
-usage = unlines ["Usage:"
-               ,"\ttmpl var1=uno:var2=dos < myfile.tmpl > myfile.txt"
-               ,"\ttmpl myfile.tmpl  < vars.conf > myfile.txt"
-               ,"\ttmpl myfile.tmpl vars.conf  > myfile.txt"
-               ]
+usage = unlines [
+   "tmpl -- simple string-template-interpolation"
+  ,"\n"
+  ,"Usage:"
+  ,"\ttmpl var1=uno:var2=dos < myfile.tmpl > myfile.txt"
+  ,"\ttmpl myfile.tmpl < vars.conf > myfile.txt"
+  ,"\ttmpl myfile.tmpl vars.conf > myfile.txt"
+  ,"\n"
+  ,"Example:"
+  ,"\techo 'The quick $color fox jumps over the $adj dog.' \\"
+  ,"\t\t| tmpl color=brown:adj=lazy"
+  ,"\n"
+  ,"Author: Michel Kuhlmann 2013"
+  ]
 
 main :: IO ()
 main = do
@@ -24,6 +34,7 @@ main = do
       case length args of
         1 -> do
           let f = head args
+          when (f == "-h" || f == "--help") (sequence_ [putStrLn usage, exitSuccess])
           isFile <- doesFileExist f
           if isFile
              then do
