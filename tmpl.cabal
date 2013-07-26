@@ -18,4 +18,5 @@ executable tmpl
   build-depends:     base,
                      template,
                      text,
-                     bytestring
+                     bytestring,
+                     directory
