@@ -1,5 +1,5 @@
 Simple command-line tool for string-template-replacement, based on Johan
-Tibbel's [template](https://github.com/tibbe/template)-library.
+Tibbell's [template](https://github.com/tibbe/template)-library.
 
 The program could be run in three ways:
 
