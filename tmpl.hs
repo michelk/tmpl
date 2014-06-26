@@ -71,5 +71,6 @@ splitStr s = map splitEq (T.split (\c -> c `elem` [':','\n'] ) s)
   where
     splitEq s = (k,v)
       where
-        k:v:[] = map chomp $ T.split (== '=') s
-    chomp = T.replace " " ""
+        k:v:[] = T.split (== '=') s
+        --k:v:[] = map chomp $ T.split (== '=') s
+    --chomp = T.replace " " ""
