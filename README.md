@@ -1,4 +1,4 @@
-# tmpl [![Hackage version](https://img.shields.io/hackage/v/tmpl.svg?style=flat)](https://hackage.haskell.org/package/tmpl)
+# tmpl [![Build Status](https://travis-ci.org/michelk/tmpl.svg?branch=master)](https://travis-ci.org/michelk/tmpl) [![Hackage version](https://img.shields.io/hackage/v/tmpl.svg?style=flat)](https://hackage.haskell.org/package/tmpl)
 Simple command-line tool for string-template-replacement, based on Johan
 Tibbell's [template](https://github.com/tibbe/template)-library.
 
