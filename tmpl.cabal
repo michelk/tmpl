@@ -15,7 +15,7 @@ cabal-version:       >=1.8
 executable tmpl
    main-is:          tmpl.hs
   -- other-modules:       
-  build-depends:     base,
+  build-depends:     base == 4.*,
                      template,
                      text,
                      bytestring,
